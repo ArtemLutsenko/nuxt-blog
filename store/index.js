@@ -43,15 +43,15 @@ const createStore = () => {
       setPosts({ commit }, posts) {
         commit('setPosts', posts)
       },
-      addPost({ commit }, post) {
+      addPost(context, post) {
         const createdPost = {
           ...post,
           updatedDate: new Date()
         }
         return this.$axios
-          .$post('/posts.json', createdPost)
+          .$post(`/posts.json?auth=${context.state.token}`, createdPost)
           .then((res) => {
-            commit('addPost', { ...createdPost, id: res.data.name })
+            context.commit('addPost', { ...createdPost, id: res.name })
           })
           .catch((e) => console.log(e))
       },

@@ -3,7 +3,7 @@
     <article>
       <div
         class="post-thumbnail"
-        :style="{ backgrounImage: 'url(' + thumbnail + ')' }"
+        :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
       ></div>
       <div class="post-content">
         <h1>{{ title }}</h1>
@@ -71,7 +71,7 @@ a {
   height: 200px;
   background-position: center;
   background-size: cover;
-  background-image: url(../../assets/img/Tech-sector.jpg);
+  /*  background-image: url(../../assets/img/Tech-sector.jpg); */
 }
 
 .post-content {
